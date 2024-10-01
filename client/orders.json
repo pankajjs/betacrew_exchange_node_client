@@ -1,13 +1,6 @@
 [
   {
     "symbol": "AAPL",
-    "buySellIndicator": "B",
-    "quantity": 50,
-    "price": 100,
-    "packetSequence": 1
-  },
-  {
-    "symbol": "AAPL",
     "buySellIndicator": "S",
     "quantity": 20,
     "price": 101,
@@ -33,6 +26,13 @@
     "quantity": 30,
     "price": 55,
     "packetSequence": 6
+  },
+  {
+    "symbol": "META",
+    "buySellIndicator": "S",
+    "quantity": 20,
+    "price": 57,
+    "packetSequence": 7
   },
   {
     "symbol": "MSFT",
@@ -77,17 +77,10 @@
     "packetSequence": 13
   },
   {
-    "symbol": "AAPL",
-    "buySellIndicator": "B",
-    "quantity": 30,
-    "price": 98,
-    "packetSequence": 2
-  },
-  {
-    "symbol": "META",
+    "symbol": "AMZN",
     "buySellIndicator": "S",
-    "quantity": 20,
-    "price": 57,
-    "packetSequence": 7
+    "quantity": 10,
+    "price": 3015,
+    "packetSequence": 14
   }
 ]

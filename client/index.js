@@ -22,7 +22,7 @@ const ERROR_LOG = {
     FAILED_CREATE_JSON_FILE: "Failed to create json file. Try again",
 }
 
-const orders = []
+let orders = []
 let isClosedConnection = false;
 let missingOrdersSequence = [];
 
@@ -86,9 +86,6 @@ function getAllOrders(callType, resendSequence = null){
             offset += 4;
             const packetSequence = data.readInt32BE(offset);
             offset += 4 ;
-            // console.log({
-            //     symbol, buySellIndicator, quantity, price, packetSequence
-            // });
             orders.push({
                 symbol, buySellIndicator, quantity, price, packetSequence
             })
@@ -118,6 +115,7 @@ function getAllOrders(callType, resendSequence = null){
         }
 
         if(missingOrdersSequence.length === 0){
+            orders = orders.sort((o1, o2)=>o1.packetSequence-o2.packetSequence);
             fs.writeFile(FILE_NAME, JSON.stringify(orders, null, 2), (err)=>{
                 if(err){
                     console.error(`${ERROR_LOG.FAILED_CREATE_JSON_FILE}`);
