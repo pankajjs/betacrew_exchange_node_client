@@ -47,7 +47,7 @@ const createBinaryPayload = (size, callType, resendSeq = null) => {
 const getMissingOrdersSequence = (orders) => {
     const missingOrdersSequence = [];
     const sequences = orders.map(o=>o.packetSequence);
-    const lowSequence = Math.min(...sequences);
+    const lowSequence = 1;
     const highSequence = Math.max(...sequences);
 
     for(let sequence = lowSequence; sequence <= highSequence; sequence++){
